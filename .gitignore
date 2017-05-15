@@ -1,0 +1,9 @@
+/vendor/*
+/tmp/*
+/logs/*
+/node_modules/*
+/htmlreport/*
+/.idea/*
+/metadata/*
+composer.phar
+npm-debug.log
