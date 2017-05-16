@@ -1,14 +1,14 @@
 CREATE SCHEMA `trial_db` DEFAULT CHARACTER SET utf8;
 USE `trial_db`;
 
-CREATE TABLE `Genres` (
+CREATE TABLE `genre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `Genres` VALUES
+INSERT INTO `genre` VALUES
   (1,'Signal Processing'),
   (2,'Data Science'),
   (3,'Mathematics'),
@@ -23,7 +23,7 @@ INSERT INTO `Genres` VALUES
   (12,'Comic')
 ;
 
-CREATE TABLE `Authors` (
+CREATE TABLE `author` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `second_name` varchar(45) DEFAULT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE `Authors` (
 ) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `Authors` VALUES
+INSERT INTO `author` VALUES
   (1,'Jaideva','Goswami'),
   (2,'John','Foreman'),
   (3,'Stephen','Hawking'),
@@ -165,7 +165,7 @@ INSERT INTO `Authors` VALUES
 
 
 
-CREATE TABLE `Books` (
+CREATE TABLE `book` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author_id` int(11) NOT NULL,
   `genre_id` int(11) NOT NULL,
@@ -174,12 +174,12 @@ CREATE TABLE `Books` (
   PRIMARY KEY (`id`),
   KEY `book_author_pk_idx` (`author_id`),
   KEY `book_genre_pk_idx` (`genre_id`),
-  CONSTRAINT `book_author_pk` FOREIGN KEY (`author_id`) REFERENCES `Authors` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `book_genre_pk` FOREIGN KEY (`genre_id`) REFERENCES `Genres` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `book_author_pk` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `book_genre_pk` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=207 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `Books` VALUES
+INSERT INTO `book` VALUES
   (1,1,1,'Fundamentals of Wavelets',225),
   (2,2,2,'Data Smart',412),
   (3,3,3,'God Created the Integers',223),
