@@ -15,7 +15,7 @@ class AuthorsFixture extends TestFixture
      *
      * @var string
      */
-    public $table = 'Authors';
+    public $table = 'authors';
 
     /**
      * Fields

@@ -15,7 +15,7 @@ class BooksFixture extends TestFixture
      *
      * @var string
      */
-    public $table = 'Books';
+    public $table = 'books';
 
     /**
      * Fields

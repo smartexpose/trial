@@ -15,7 +15,7 @@ class GenresFixture extends TestFixture
      *
      * @var string
      */
-    public $table = 'Genres';
+    public $table = 'genres';
 
     /**
      * Fields
